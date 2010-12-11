@@ -15,16 +15,16 @@
 				$.each(cookies, function(index, cookie) {
 					cookie = cookie.split('=');
 					
-					$("<div/>", {
+					$('<div/>', {
 					    id: cookie[0],
-					    html: $("<p/>", {
-					        html: "cookie name: <strong>" + cookie[0] + "</strong> cookie value:  <strong>" + cookie[1] + "</strong> "
+					    html: $('<p/>', {
+					        html: 'cookie name: <strong class="name">' + cookie[0] + '</strong> cookie value:  <strong class="value">' + cookie[1] + '</strong> '
 					    })
-					}).appendTo("#cookie");
+					}).appendTo('#cookie');
 					
-					$("<a/>", {
-				        href: "#",
-						text: "remove cookie",
+					$('<a/>', {
+				        href: '#',
+						text: 'remove cookie',
 				        click: function() {
 				            $.cookie({
 								name: cookie[0],
@@ -33,36 +33,41 @@
 							$(this).parent().fadeOut(300);
 				            return false;
 						}
-				    }).appendTo("#" + cookie[0] + " p");
+				    }).appendTo('#' + cookie[0] + ' p');
 				  	
 				});
 			}
 			
 			$('#create_cookie').click(function(){
-				$.cookie({
-					name: $('#cookie_name').val(),
-					value: $('#cookie_value').val()
-				});
+				if ($('#' + $('#cookie_name').val()).length) {
+					$('#' + $('#cookie_name').val() + ' .value').html($('#cookie_value').val());
+				} else {
+					$.cookie({
+						name: $('#cookie_name').val(),
+						value: $('#cookie_value').val()
+					});
+
+					$('<div/>', {
+					    id: $('#cookie_name').val(),
+					    html: $('<p/>', {
+					        html: 'cookie name: <strong class="name">' + $('#cookie_name').val() + '</strong> cookie value:  <strong class="value">' + $('#cookie_value').val() + '</strong> '
+					    })
+					}).appendTo('#cookie');
+
+					$('<a/>', {
+				        href: '#',
+						text: 'remove cookie',
+				        click: function() {
+				            $.cookie({
+								name: $('#cookie_name').val(),
+								remove: true
+							});
+							$(this).parent().fadeOut(300);
+				            return false;
+						}
+				    }).appendTo('#' + $('#cookie_name').val() + ' p');
+				}
 				
-				$("<div/>", {
-				    id: $('#cookie_name').val(),
-				    html: $("<p/>", {
-				        html: "cookie name: <strong>" + $('#cookie_name').val() + "</strong> cookie value:  <strong>" + $('#cookie_value').val() + "</strong> "
-				    })
-				}).appendTo("#cookie");
-				
-				$("<a/>", {
-			        href: "#",
-					text: "remove cookie",
-			        click: function() {
-			            $.cookie({
-							name: $('#cookie_name').val(),
-							remove: true
-						});
-						$(this).parent().fadeOut(300);
-			            return false;
-					}
-			    }).appendTo("#" + $('#cookie_name').val() + " p");
 				return false;
 			});
 		});

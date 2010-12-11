@@ -98,9 +98,9 @@
 			if (option.domain == 'auto') {
 				// Get domain name or IP address. Returns 192.168.1.1 or .example.com for use with subdomains.
 				var ipAddress = document.domain.match(/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g),
-					domain = document.domain.match(/\.([A-Za-z]+)\.([A-Za-z]+)$/g);
+					domainName = "." + document.domain;
 				// Is locaiton an IP address or domain name?
-				var currentLocation = ipAddress ? ipAddress.toString() : domain.toString();
+				var currentLocation = ipAddress ? ipAddress.toString() : domainName.toString();
 				cookie += "; domain=" + currentLocation + ";";
 			} else {
 				// if domain specified

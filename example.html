@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Cookie, A Cookie Plugin for jQuery</title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="cookie.jquery.js"></script>
+	<script>
+		$(function(){
+			if (document.cookie) {
+				var cookies = document.cookie.split('; ');
+				
+				$.each(cookies, function(index, cookie) {
+					cookie = cookie.split('=');
+					
+					$("<div/>", {
+					    id: cookie[0],
+					    html: $("<p/>", {
+					        html: "cookie name: <strong>" + cookie[0] + "</strong> cookie value:  <strong>" + cookie[1] + "</strong> "
+					    })
+					}).appendTo("#cookie");
+					
+					$("<a/>", {
+				        href: "#",
+						text: "remove cookie",
+				        click: function() {
+				            $.cookie({
+								name: cookie[0],
+								remove: true
+							});
+							$(this).parent().fadeOut(300);
+				            return false;
+						}
+				    }).appendTo("#" + cookie[0] + " p");
+				  	
+				});
+			}
+			
+			$('#create_cookie').click(function(){
+				$.cookie({
+					name: $('#cookie_name').val(),
+					value: $('#cookie_value').val()
+				});
+				
+				$("<div/>", {
+				    id: $('#cookie_name').val(),
+				    html: $("<p/>", {
+				        html: "cookie name: <strong>" + $('#cookie_name').val() + "</strong> cookie value:  <strong>" + $('#cookie_value').val() + "</strong> "
+				    })
+				}).appendTo("#cookie");
+				
+				$("<a/>", {
+			        href: "#",
+					text: "remove cookie",
+			        click: function() {
+			            $.cookie({
+							name: $('#cookie_name').val(),
+							remove: true
+						});
+						$(this).parent().fadeOut(300);
+			            return false;
+					}
+			    }).appendTo("#" + $('#cookie_name').val() + " p");
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>This page must be run from a web server.</p>
+	<div id="cookie">
+
+	</div>
+	
+	<div id="create">
+		<label for="cookie_name">Cookie Name</label>
+		<input type="text" name="cookie_name" value="" id="cookie_name">
+		
+		<label for="cookie_value">Cookie Value</label>
+		<input type="text" name="cookie_value" value="" id="cookie_value">
+		
+		<input type="submit" name="create_cookie" value="Create Cookie" id="create_cookie">
+	</div>
+
+</body>
+</html>

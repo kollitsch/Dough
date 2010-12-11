@@ -1,0 +1,53 @@
+h1. Cookie, A Cookie Plugin for jQuery
+
+Cookie is an easy to use cookie plugin for jQuery with powerful features. Cookie can auto set your domain name with '.' prefix so your cookies work with subdomains and will allow you to easily go from local to staging to product servers with out a problem.
+
+h2. Info
+
+Developed by "Nathan Searles":mailto:nsearles@gmail.com, "http://nathansearles.com":http://nathansearles.com
+
+For updates, follow Nathan Searles on "Twitter":http://twitter.com/nathansearles
+
+Cookie is licensed under the "Apache license":http://www.apache.org/licenses/LICENSE-2.0.
+
+h2. Examples and Instructions
+
+Check out an example at "http://nathansearles.com/plugin/cookie/":http://nathansearles.com/plugin/cookie/
+
+h3. Create cookie
+<pre>
+	$.cookie({
+		name: 'cookieName',
+		value: 'cookieValue'
+	});
+</pre>	
+
+h3. Read cookie
+<pre>
+	$.cookie({
+		name: 'cookieName'
+	});
+</pre>
+
+h3. Delete cookie
+<pre>
+	$.cookie({
+		name: 'cookieName',
+		remove: true
+	});
+</pre>
+
+h3. Set full cookie
+<pre>
+	$.cookie({
+		name: 'cookieName',
+		value: 'cookieValue',
+		path: '/',
+		date: '10/12/2020',
+		domain: 'auto'
+	});
+</pre>
+
+h2. Changelog
+* 1.0
+** Initial release

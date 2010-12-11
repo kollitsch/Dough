@@ -15,37 +15,33 @@ h2. Examples and Instructions
 Check out an example at "http://nathansearles.com/plugin/cookie/":http://nathansearles.com/plugin/cookie/
 
 h3. Create cookie
-<pre>
-	$.cookie({
-		name: 'cookieName',
-		value: 'cookieValue'
-	});
+<pre>$.cookie({
+  name: 'cookieName',
+  value: 'cookieValue'
+ });
 </pre>	
 
 h3. Read cookie
-<pre>
-	$.cookie({
-		name: 'cookieName'
-	});
+<pre>$.cookie({
+  name: 'cookieName'
+ });
 </pre>
 
 h3. Delete cookie
-<pre>
-	$.cookie({
-		name: 'cookieName',
-		remove: true
-	});
+<pre>$.cookie({
+  name: 'cookieName',
+  remove: true
+ });
 </pre>
 
 h3. Set full cookie
-<pre>
-	$.cookie({
-		name: 'cookieName',
-		value: 'cookieValue',
-		path: '/',
-		date: '10/12/2020',
-		domain: 'auto'
-	});
+<pre>$.cookie({
+  name: 'cookieName',
+  value: 'cookieValue',
+  path: '/',
+  date: '10/12/2020',
+  domain: 'auto'
+ });
 </pre>
 
 h2. Changelog

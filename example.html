@@ -41,6 +41,10 @@
 			$('#create_cookie').click(function(){
 				if ($('#' + $('#cookie_name').val()).length) {
 					$('#' + $('#cookie_name').val() + ' .value').html($('#cookie_value').val());
+					$.cookie({
+						name: $('#cookie_name').val(),
+						value: $('#cookie_value').val()
+					});
 				} else {
 					$.cookie({
 						name: $('#cookie_name').val(),

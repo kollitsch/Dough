@@ -35,10 +35,10 @@ h3. Definition
 <pre>$.dough([name], [value], { [options] });</pre>
 
 h3. Options Definition
-*	expires: Days 'til cookie expires
-*	path: Default is root '/', set to 'current' to use the path of current page
-*	domain: Auto detect and set domain with subdomain prefix
-*	secure: Set to true if you're using https://
+* expires: Days 'til cookie expires
+* path: Default is root '/', set to 'current' to use the path of current page
+* domain: Auto detect and set domain with subdomain prefix
+* secure: Set to true if you're using https://
 
 h2. Changelog
 * 1.0

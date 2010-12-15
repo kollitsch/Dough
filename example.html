@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Cookie, A Cookie Plugin for jQuery</title>
+	<title>Dough, A Cookie Plugin for jQuery</title>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-	<script src="cookie.jquery.js"></script>
+	<script src="dough.jquery.js"></script>
 	<script>
 		$(function(){
 			if (document.cookie) {
@@ -14,7 +14,7 @@
 				
 				$.each(cookies, function(index, cookie) {
 					cookie = cookie.split('=');
-					
+
 					$('<div/>', {
 					    id: cookie[0],
 					    html: $('<p/>', {
@@ -26,11 +26,10 @@
 				        href: '#',
 						text: 'remove cookie',
 				        click: function() {
-				            $.cookie({
-								name: cookie[0],
-								remove: true
+							$.dough( cookie[0], 'remove' );
+							$('#' + cookie[0]).fadeOut(300,function(){
+								$(this).remove();
 							});
-							$(this).parent().fadeOut(300);
 				            return false;
 						}
 				    }).appendTo('#' + cookie[0] + ' p');
@@ -41,16 +40,9 @@
 			$('#create_cookie').click(function(){
 				if ($('#' + $('#cookie_name').val()).length) {
 					$('#' + $('#cookie_name').val() + ' .value').html($('#cookie_value').val());
-					$.cookie({
-						name: $('#cookie_name').val(),
-						value: $('#cookie_value').val()
-					});
+					$.dough( $('#cookie_name').val(), $('#cookie_value').val() );
 				} else {
-					$.cookie({
-						name: $('#cookie_name').val(),
-						value: $('#cookie_value').val()
-					});
-
+					$.dough( $('#cookie_name').val(), $('#cookie_value').val() );
 					$('<div/>', {
 					    id: $('#cookie_name').val(),
 					    html: $('<p/>', {
@@ -62,11 +54,10 @@
 				        href: '#',
 						text: 'remove cookie',
 				        click: function() {
-				            $.cookie({
-								name: $('#cookie_name').val(),
-								remove: true
+				            $.dough( $('#cookie_name').val(), 'remove' );
+							$('#' + $('#cookie_name').val()).fadeOut(300,function(){
+								$(this).remove();
 							});
-							$(this).parent().fadeOut(300);
 				            return false;
 						}
 				    }).appendTo('#' + $('#cookie_name').val() + ' p');

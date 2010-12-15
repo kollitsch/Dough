@@ -1,6 +1,6 @@
-h1. Cookie, A Cookie Plugin for jQuery
+h1. Dough, A Cookie Plugin for jQuery
 
-Cookie is an easy to use cookie plugin for jQuery with powerful features. Cookie can auto set your domain name with '.' prefix so your cookies work with subdomains and will allow you to easily go from local to staging to product servers with out a problem.
+Dough is an easy to use cookie plugin for jQuery with powerful features. Dough can auto set your domain name with '.' prefix so your cookies work with subdomains and will allow you to easily go from local to staging to product servers with out a problem.
 
 h2. Info
 
@@ -8,41 +8,37 @@ Developed by "Nathan Searles":mailto:nsearles@gmail.com, "http://nathansearles.c
 
 For updates, follow Nathan Searles on "Twitter":http://twitter.com/nathansearles
 
-Cookie is licensed under the "Apache license":http://www.apache.org/licenses/LICENSE-2.0.
+Dough is licensed under the "Apache license":http://www.apache.org/licenses/LICENSE-2.0.
 
 h2. Examples and Instructions
 
-Check out an example at "http://nathansearles.com/plugin/cookie/":http://nathansearles.com/plugin/cookie/
+Check out an example at "http://nathansearles.com/plugin/dough/":http://nathansearles.com/plugin/dough/
 
 h3. Create cookie
-<pre>$.cookie({
-  name: 'cookieName',
-  value: 'cookieValue'
- });
-</pre>	
+<pre>$.dough('cookieName', 'cookieValue');</pre>	
 
 h3. Read cookie
-<pre>$.cookie({
-  name: 'cookieName'
- });
-</pre>
+<pre>$.dough('cookieName');</pre>
 
 h3. Delete cookie
-<pre>$.cookie({
-  name: 'cookieName',
-  remove: true
- });
-</pre>
+<pre>$.dough('cookieName', 'remove');</pre>
+
+Note: If setting the path to 'current', you must also define that when removing the cookie.
+<pre>$.dough('cookieName', 'remove', { path: 'current' });</pre>
 
 h3. Set full cookie
-<pre>$.cookie({
-  name: 'cookieName',
-  value: 'cookieValue',
-  path: '/',
-  date: '10/12/2020',
-  domain: 'auto'
- });
-</pre>
+<pre>$.dough('cookieName', 'cookieValue', { expires: 365, path: 'current', domain: 'auto', secure: true });</pre>
+
+Example cookie has a name of 'cookieName', a value of 'cookieValue', will expire in 1 year, have path of current page, domain will be autodetected and is set to secure for a use under https://.
+
+h3. Definition
+<pre>$.dough([name], [value], { [options] });</pre>
+
+h3. Options Definition
+*	expires: Days 'til cookie expires
+*	path: Default is root '/', set to 'current' to use the path of current page
+*	domain: Auto detect and set domain with subdomain prefix
+*	secure: Set to true if you're using https://
 
 h2. Changelog
 * 1.0

@@ -34,8 +34,14 @@ Example cookie has a name of "cookieName", a value of "cookieValue", will expire
 h3. Definition
 <pre>==$.dough([name], [value], { [options] });==</pre>
 
-h3. JSON Support
+h2. JSON Support
+
+h3. Create JSON cookie
 <pre>==$.dough("jsonCookie", "[{'someName':'someValue','someOtherName':'someOtherValue'}]");==</pre>
+
+h3. Read JSON cookie
+<pre>==$.dough("jsonCookie").someName;==</pre>
+<small>That will return 'someValue'</small>
 
 h3. Options Definition
 * expires: Days 'til cookie expires

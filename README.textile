@@ -35,7 +35,7 @@ h3. Definition
 <pre>$.dough([name], [value], { [options] });</pre>
 
 h3. JSON Support
-<pre>$.dough("jsonCookie", "[{'someName':'someValue','someOtherName':'someOtherValue'}]");</pre>
+==$.dough("jsonCookie", "[{'someName':'someValue','someOtherName':'someOtherValue'}]");==
 
 h3. Options Definition
 * expires: Days 'til cookie expires

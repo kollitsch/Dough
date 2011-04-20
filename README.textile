@@ -15,24 +15,27 @@ h2. Examples and Instructions
 Check out an example at "http://nathansearles.com/plugin/dough/":http://nathansearles.com/plugin/dough/
 
 h3. Create cookie
-<pre>$.dough('cookieName', 'cookieValue');</pre>	
+<pre>$.dough("cookieName", "cookieValue");</pre>	
 
 h3. Read cookie
-<pre>$.dough('cookieName');</pre>
+<pre>$.dough("cookieName");</pre>
 
 h3. Delete cookie
-<pre>$.dough('cookieName', 'remove');</pre>
+<pre>$.dough("cookieName", "remove");</pre>
 
-Note: If setting the path to 'current', you must also define that when removing the cookie.
-<pre>$.dough('cookieName', 'remove', { path: 'current' });</pre>
+Note: If setting the path to "current", you must also define that when removing the cookie.
+<pre>$.dough("cookieName", "remove", { path: "current" });</pre>
 
 h3. Set full cookie
-<pre>$.dough('cookieName', 'cookieValue', { expires: 365, path: 'current', domain: 'auto', secure: true });</pre>
+<pre>$.dough("cookieName", "cookieValue", { expires: 365, path: "current", domain: "auto", secure: true });</pre>
 
-Example cookie has a name of 'cookieName', a value of 'cookieValue', will expire in 1 year, have path of current page, domain will be autodetected and is set to secure for a use under https://.
+Example cookie has a name of "cookieName", a value of "cookieValue", will expire in 1 year, have path of current page, domain will be autodetected and is set to secure for a use under https://.
 
 h3. Definition
 <pre>$.dough([name], [value], { [options] });</pre>
+
+h3. JSON Support
+<pre>$.dough("jsonCookie", "[{'someName':'someValue','someOtherName':'someOtherValue'}]");</pre>
 
 h3. Options Definition
 * expires: Days 'til cookie expires
@@ -41,5 +44,8 @@ h3. Options Definition
 * secure: Set to true if you're using https://
 
 h2. Changelog
+* 1.1
+** New: Support for JSON in cookie value
+
 * 1.0
 ** Initial release

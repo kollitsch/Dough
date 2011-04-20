@@ -41,9 +41,10 @@ h3. Create JSON cookie
 
 h3. Read JSON cookie
 <pre>==$.dough("jsonCookie").someName;==</pre>
-_That will return 'someValue'_
 
-h3. Options Definition
+That will return 'someValue'
+
+h2. Options Definition
 * expires: Days 'til cookie expires
 * path: Default is root '/', set to 'current' to use the path of current page
 * domain: Auto detect and set domain with subdomain prefix

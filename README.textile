@@ -41,7 +41,7 @@ h3. Create JSON cookie
 
 h3. Read JSON cookie
 <pre>==$.dough("jsonCookie").someName;==</pre>
-<small>That will return 'someValue'</small>
+_That will return 'someValue'_
 
 h3. Options Definition
 * expires: Days 'til cookie expires

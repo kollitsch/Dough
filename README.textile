@@ -24,7 +24,7 @@ h3. Delete cookie
 <pre>==$.dough("cookieName", "remove");==</pre>
 
 Note: If setting the path to "current", you must also define that when removing the cookie.
-<pre>$.dough("cookieName", "remove", { path: "current" });</pre>
+<pre>==$.dough("cookieName", "remove", { path: "current" });==</pre>
 
 h3. Set full cookie
 <pre>==$.dough("cookieName", "cookieValue", { expires: 365, path: "current", domain: "auto", secure: true });==</pre>

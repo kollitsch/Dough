@@ -60,7 +60,7 @@
 			if ( results[1] ) {
 				if ( results[1][0] === "{" ) {
 					// Parse as JSON
-					return $.parseJSON(results[1])[0];
+					return $.parseJSON(results[1]);
 				} else {
 					return results[1];
 				}

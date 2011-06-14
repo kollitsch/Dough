@@ -55,7 +55,7 @@
 		var days = option.expires;
 
 		// Get cookie value
-		if (typeof(value) === "undefined") {
+		if (value === undefined) {
 			var results = document.cookie.match( name + "=([^;]*)(;|$)" );
 			if ( results[1] ) {
 				if ( results[1][0] === "{" ) {

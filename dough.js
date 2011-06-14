@@ -57,7 +57,7 @@
 		// Get cookie value
 		if (value === undefined) {
 			var results = document.cookie.match( name + "=([^;]*)(;|$)" );
-			if ( results[1] ) {
+			if ( results != null ) {
 				if ( results[1][0] === "{" ) {
 					// Parse as JSON
 					return $.parseJSON(results[1]);

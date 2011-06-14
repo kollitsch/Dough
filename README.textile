@@ -37,7 +37,7 @@ h3. Definition
 h2. JSON Support
 
 h3. Create JSON cookie
-<pre>==$.dough("jsonCookie", "[{'someName':'someValue','someOtherName':'someOtherValue'}]");==</pre>
+<pre>==$.dough("jsonCookie", "{'someName':'someValue','someOtherName':'someOtherValue'}");==</pre>
 
 h3. Read JSON cookie
 <pre>==$.dough("jsonCookie").someName;==</pre>
@@ -51,6 +51,9 @@ h2. Options Definition
 * secure: Set to true if you're using https://
 
 h2. Changelog
+* 1.3
+** Fixed: issue with JSON detection
+
 * 1.2
 ** Fixed: issue with auto domain detection
 ** Cleaned up a few things
